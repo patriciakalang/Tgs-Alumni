@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Alumni</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+         body {
+            background-color: #f8f9fa;
+            margin-top: 56px; /* Adjusted for fixed navbar */
+        }
+        .navbar-custom {
+            background-color: #0066cc; /* Dark blue background */
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding-left: 50px; /* Tambahkan padding di sisi kiri */
+            padding-right: 50px; /* Tambahkan padding di sisi kanan */
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: white;
+        }
+        .navbar-custom .nav-link:hover {
+            color: #ffcc00; /* Hover color */
+        }
+        body {
+        padding-top: 70px;
+        margin-top: 70px; /* Menggeser seluruh konten halaman ke bawah */
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        }
+
+        .breadcrumb {
+            background-color: transparent; /* Menggunakan latar belakang transparan */
+            border-radius: 0.250rem;
+            padding: 8px 15px;
+            margin-bottom: 0;
+            margin-top: 10px; /* Menggeser breadcrumb ke bawah dari atas */
+        }
+
+        .breadcrumb-item a {
+            color: #007bff; /* Warna link default Bootstrap */
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: #6c757d; /* Warna teks untuk item aktif */
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 50px; /* Menggeser search bar ke bawah dari atas */
+        }
+
+        .search-bar input {
+            border-radius: 20px;
+            padding: 5px 15px;
+            border: 1px solid #ced4da;
+        }
+
+        .search-bar button {
+            border-radius: 20px;
+            padding: 5px 15px;
+            border: 1px solid #007bff;
+            background-color: #007bff;
+            color: white;
+        }
+
+        /*cari alumi*/
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 900px;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #343a40;
+        }
+
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .pagination {
+            margin: 0;
+        }
+        /* Footer Section */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .footer {
+            background-color: #ffffff;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer .column {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .footer .column:last-child {
+            margin-right: 0;
+        }
+
+        .footer h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #1e73be;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .social-networks a {
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .footer .social-networks img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <a class="navbar-brand" href="#">AlumniKu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="berita.html">Berita</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carialumi.html">Cari Alumni</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forum.html">Forum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Berita Alumni</li>
+            </ol>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Cari Berita">
+            <button class="btn btn-primary">Cari</button>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Pencarian Alumni</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <form id="alumniForm">
+                    <div class="form-group">
+                        <label for="namaAlumni">Nama Alumni</label>
+                        <input type="text" class="form-control" id="namaAlumni" placeholder="Masukkan Nama Alumni" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tahunLulus">Tahun Lulus</label>
+                        <select class="form-control" id="tahunLulus" required>
+                            <option value="">Pilih Tahun</option>
+                            <!-- Add more options here -->
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tambah Data</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h4>Kategori Berita</h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Postingan Admin <span class="badge badge-primary badge-pill">2</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Kemanusiaan <span class="badge badge-secondary badge-pill">1</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Lowongan Pekerjaan <span class="badge badge-success badge-pill">1</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Rapat Rutin <span class="badge badge-danger badge-pill">1</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama</th>
+                            <th>Tahun Lulus</th>
+                        </tr>
+                    </thead>
+                    <tbody id="alumniTableBody">
+                        <!-- Table rows will go here -->
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <label>Show 
+                            <select class="custom-select custom-select-sm form-control form-control-sm" style="width: auto;">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select> entries
+                        </label>
+                    </div>
+                    <nav>
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript to handle form submission and data display -->
+    <script>
+        document.getElementById('alumniForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get form values
+            const namaAlumni = document.getElementById('namaAlumni').value;
+            const tahunLulus = document.getElementById('tahunLulus').value;
+
+            // Get the table body element
+            const tableBody = document.getElementById('alumniTableBody');
+
+            // Create a new row and insert it into the table
+            const rowCount = tableBody.rows.length + 1;
+            const newRow = tableBody.insertRow();
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+
+            cell1.textContent = rowCount;
+            cell2.textContent = namaAlumni;
+            cell3.textContent = tahunLulus;
+
+            // Clear the form fields
+            document.getElementById('namaAlumni').value = '';
+            document.getElementById('tahunLulus').value = '';
+        });
+
+        
+    </script>
+</body>
+</html>
